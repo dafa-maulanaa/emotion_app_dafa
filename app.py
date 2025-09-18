@@ -15,8 +15,10 @@ import matplotlib.pyplot as plt
 import altair as alt
 
 # ----------------- CONFIG -----------------
-MODEL_PATH = "emotion_model.keras"  # Pastikan path file model benar
-LABEL_ENCODER_PATH = "label_encoder.pkl"  # Pastikan path file encoder benar
+MODEL_PATH = 'emotion_model.keras'  
+LABEL_ENCODER_PATH = 'label_encoder.pkl'  
+model = tf.keras.models.load_model(MODEL_PATH)
+model.summary()
 SAMPLE_RATE = 22050
 N_MFCC = 40
 MAX_LEN = 174
@@ -27,8 +29,8 @@ model = None
 le = None
 if os.path.exists(MODEL_PATH) and os.path.exists(LABEL_ENCODER_PATH):
     try:
-        model = tf.keras.models.load_model(MODEL_PATH)  # Memuat model dari direktori saat ini
-        le = joblib.load(LABEL_ENCODER_PATH)  # Memuat encoder dari direktori saat ini
+        model = tf.keras.models.load_model(MODEL_PATH)  
+        le = joblib.load(LABEL_ENCODER_PATH)  
         st.success("Model dan Label Encoder dimuat.")
     except Exception as e:
         st.error("Gagal memuat model/encoder.")
@@ -116,3 +118,4 @@ if uploaded is not None:
     st.session_state.history = pd.concat([st.session_state.history, history_df], ignore_index=True)
     st.write(st.session_state.history.tail(10))  # Display the last 10 prediction results
 # =========================================================
+
