@@ -1,8 +1,7 @@
-streamlit-webrtc
 streamlit
+streamlit-webrtc
 librosa
 tensorflow
-sounddevice
 soundfile
 joblib
 pandas
