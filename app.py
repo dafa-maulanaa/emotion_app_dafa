@@ -17,8 +17,6 @@ import altair as alt
 # ----------------- CONFIG -----------------
 MODEL_PATH = 'emotion_model.keras'  
 LABEL_ENCODER_PATH = 'label_encoder.pkl'  
-model = tf.keras.models.load_model(MODEL_PATH)
-model.summary()
 SAMPLE_RATE = 22050
 N_MFCC = 40
 MAX_LEN = 174
@@ -118,4 +116,5 @@ if uploaded is not None:
     st.session_state.history = pd.concat([st.session_state.history, history_df], ignore_index=True)
     st.write(st.session_state.history.tail(10))  # Display the last 10 prediction results
 # =========================================================
+
 
