@@ -15,8 +15,8 @@ import matplotlib.pyplot as plt
 import altair as alt
 
 # ----------------- CONFIG -----------------
-MODEL_PATH = "emotion_model.keras"      
-LABEL_ENCODER_PATH = "label_encoder.pkl"  
+MODEL_PATH = "emotion_model.keras"       # Pastikan file model berada di sini
+LABEL_ENCODER_PATH = "label_encoder.pkl"  # Pastikan file encoder berada di sini
 SAMPLE_RATE = 22050
 N_MFCC = 40
 MAX_LEN = 174
