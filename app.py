@@ -15,8 +15,8 @@ import matplotlib.pyplot as plt
 import altair as alt
 
 # ----------------- CONFIG -----------------
-MODEL_PATH = "emotion_model.keras"       # Pastikan file model berada di sini
-LABEL_ENCODER_PATH = "label_encoder.pkl"  # Pastikan file encoder berada di sini
+MODEL_PATH = "emotion_model.keras"  # Pastikan path file model benar
+LABEL_ENCODER_PATH = "label_encoder.pkl"  # Pastikan path file encoder benar
 SAMPLE_RATE = 22050
 N_MFCC = 40
 MAX_LEN = 174
@@ -34,7 +34,7 @@ if os.path.exists(MODEL_PATH) and os.path.exists(LABEL_ENCODER_PATH):
         st.error("Gagal memuat model/encoder.")
         st.exception(e)
 else:
-    st.warning("Model atau encoder tidak ditemukan. Jalankan train_model.py dulu.")
+    st.warning("Model atau encoder tidak ditemukan. Pastikan file model dan encoder ada di repositori.")
 # --------------------------------------------------------
 
 # -------------- Audio Processor Using WebRTC -------------
