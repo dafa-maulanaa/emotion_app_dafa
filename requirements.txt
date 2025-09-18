@@ -1,10 +1,10 @@
 streamlit
 streamlit-webrtc
 librosa
-tensorflow
+tensorflow==2.10.0
 soundfile
 joblib
 pandas
 altair
 matplotlib
-numpy
+numpy==1.21.5
